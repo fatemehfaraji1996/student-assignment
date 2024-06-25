@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .flag-container {
+    width: 500px;
+    height: 300px;
+    background-image: url('flag.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .flag-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flag-info h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .flag-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
