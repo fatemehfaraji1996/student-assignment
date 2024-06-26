@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -41,4 +41,3 @@ ul {
   gap: 1.2rem;
   position: relative;
   /* width: 50%; */
-}

@@ -1,3 +1,6 @@
+.darkmode-body{
+  background-color: hsl(209, 23%, 22%);
+}
 .allCard {
   display: flex;
   flex-wrap: wrap;
@@ -8,33 +11,60 @@
 }
 
 .card {
+  padding: 10px;
   border: 1px solid #ddd;
+  color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px;
+  width:200px;
+  box-shadow: 2px 2px 2px 2px rgba(138, 179, 109, 0.2);
+  box-shadow: 5px 5px 5px 5px rgb(84, 84, 84);
+}
+.darkmode_card{
+  background-color: hsl(200, 15%, 8%);
+  padding: 10px;
+  border: 1px solid #141467;
+  color: #333;
   border-radius: 4px;
   overflow: hidden;
   margin: 10px;
   width: 200px;
-  box-shadow: 2px 2px 2px 2px rgba(138, 179, 109, 0.2);
-  box-shadow: 5px 5px 5px 5px rgb(84, 84, 84);
+  /* box-shadow: 2px 2px 2px 2px rgba(68, 69, 67, 0.2); */
+  box-shadow: 5px 5px 5px 5px rgba(34, 92, 136, 0.296);
 }
-
-.card-img-top {
+.cardimgtop {
   width: 100%;
   height: 120px;
   object-fit: cover;
 }
 
-.card-body {
+.cardbody {
   padding: 15px;
 }
+.cardbodyDark{
+  padding: 15px;
+  color:#ffffff;
+}
 
-.card-title {
+.cardtitle {
   margin: 0;
   font-size: 1.2em;
   color: #333;
 }
+.cardtitleDark {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
+}
 
-.card-text {
+.cardtext {
   color: #666;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.cardtextDark{
+  color: #ffffff;
   font-size: 0.9em;
   margin-bottom: 5px;
 }
@@ -45,6 +75,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.p-navbar-dark{
+  color: #ddd;
 }
 .button {
   /* background-color: white; */
@@ -60,38 +93,17 @@
   cursor: pointer;
   border-radius: 8px;
 }
-.dropdown {
-  margin: 20px;
-}
-
-.dropdown label {
-  margin-right: 10px;
-}
-
-.dropdown select {
-  padding: 5px 10px;
-  border-radius: 5px;
+.button-dark {
+  /* background-color: white; */
+  background-color: hsl(209, 23%, 22%);
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: 2px solid hsl(209, 23%, 22%);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-}
-.dark-mode .card {
-  background-color: #333;
-  color: white;
-  border-color: #666;
-  box-shadow: 2px 2px 2px 2px rgba(138, 179, 109, 0.2);
-}
-.dark-mode {
-  background-color: #333;
-  color: white;
-}
-
-.card {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-}
-
-.dark-text {
-  color: white;
+  border-radius: 8px;
 }

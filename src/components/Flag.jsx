@@ -7,11 +7,11 @@ export default function Mycomponent() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedRegion, setSelectedRegion] = useState("All");
+  // const [selectedRegion, setSelectedRegion] = useState("All");
 
-  const handleSelect = (event) => {
-    setSelectedRegion(event.target.value);
-  };
+  // const handleSelect = (event) => {
+  //   setSelectedRegion(event.target.value);
+  // };
   // dark mode
   const [darkMode, setDarkMode] = useState(false);
 
@@ -42,20 +42,19 @@ export default function Mycomponent() {
 
   return (
     <>
-      {/* navbar */}
+     <div className={darkMode?"darkmode-body":"body"}> {/* navbar */}
       <div className="navbar">
-        <p className="p-navbar">where in the world? </p>
-        {/* <button className="button">Dark mode</button>
-         */} <button className="button" onClick={toggleDarkMode}>
-         Dark Mode
-      </button>
+        <p className={darkMode?"p-navbar-dark":"p-navbar"}>where in the world? </p>
+        <button className={darkMode?"button-dark":"button"} onClick={toggleDarkMode}>
+          Dark Mode
+        </button>
       </div>
       {/* hamburger menu and search box */}
       <div>
         {/* search box */}
         <div></div>
         {/* hamburger meno*/}
-        <div className="dropdown">
+        {/* <div className="dropdown">
           <label htmlFor="region-select">Filter by Region:</label>
           <select
             id="region-select"
@@ -69,26 +68,26 @@ export default function Mycomponent() {
             <option value="Europe">Europe</option>
             <option value="Oceania">Oceania</option>
           </select>
-        </div>
+        </div> */}
       </div>
       {/* cards */}
       <div className="allCard">
         {data.map((item, index) => (
-          <div className="card" key={index} style={{ position: "relative" }}>
+          <div className={darkMode?"darkmode_card":"card"} key={index} style={{ position: "relative" }}>
             <img
               src={item.flags.png}
               alt={item.name.common}
-              className="card-img-top"
+              className="cardimgtop"
             />
-            <div className="card-body">
-              <h5 className="card-title">{item.name.common}</h5>
-              <p className="card-text">Population: {item.population}</p>
-              <p className="card-text">Region: {item.region}</p>
-              <p className="card-text">Capital: {item.capital}</p>
+            <div className={darkMode?"cardbodyDark":"cardbody"}>
+              <h5 className={darkMode?"cardtitleDark":"cardtitle"}>{item.name.common}</h5>
+              <p className={darkMode?"cardtextDark":"cardtext"}>Population: {item.population}</p>
+              <p className={darkMode?"cardtextDark":"cardtext"}>Region: {item.region}</p>
+              <p className={darkMode?"cardtextDark":"cardtext"}>Capital: {item.capital}</p>
             </div>
           </div>
         ))}
-      </div>
+      </div></div>
     </>
   );
 }
