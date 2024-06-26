@@ -1,44 +1,44 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
-  
-  .flag-container {
-    width: 500px;
-    height: 300px;
-    background-image: url('flag.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-  
-  .flag-info {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .flag-info h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .flag-info p {
-    margin: 0;
-    font-size: 16px;
-  }
-  
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: auto;
+  margin: 70px 20px 20px 20px;
+  padding: 20px;
+
+  height: 60px;
+  width: auto;
+
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-between;
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  width: 35rem;
+}
+ p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.half{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: rem;
+  gap: 1.2rem;
+  position: relative;
+  /* width: 50%; */
+}

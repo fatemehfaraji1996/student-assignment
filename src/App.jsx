@@ -3,18 +3,15 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
-// import Mycomponent from './components/Flag'
-import CountryPage from './components/pageTwo'
+import Mycomponent from './components/Flag'
+// import CountryPage from './components/pageTwo'
 function App() {
   
   return (
     <>
-          <div className="navbar">
-        <p className="p-navbar">where in the world? </p>
-        <button className="button">Dark mode</button>
-      </div>
-    {/* <Mycomponent/> */}
-    <CountryPage/>
+
+    <Mycomponent/>
+    {/* <CountryPage/> */}
     </>
   )
 }

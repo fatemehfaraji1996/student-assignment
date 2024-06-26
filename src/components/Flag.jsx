@@ -7,11 +7,18 @@ export default function Mycomponent() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedRegion, setSelectedRegion] = useState('All');
+  const [selectedRegion, setSelectedRegion] = useState("All");
 
   const handleSelect = (event) => {
     setSelectedRegion(event.target.value);
   };
+  // dark mode
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
@@ -36,23 +43,33 @@ export default function Mycomponent() {
   return (
     <>
       {/* navbar */}
-
+      <div className="navbar">
+        <p className="p-navbar">where in the world? </p>
+        {/* <button className="button">Dark mode</button>
+         */} <button className="button" onClick={toggleDarkMode}>
+         Dark Mode
+      </button>
+      </div>
       {/* hamburger menu and search box */}
       <div>
-      {/* search box */}
+        {/* search box */}
         <div></div>
         {/* hamburger meno*/}
         <div className="dropdown">
-      <label htmlFor="region-select">Filter by Region:</label>
-      <select id="region-select" value={selectedRegion} onChange={handleSelect}>
-        <option value="All">All</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
-    </div>
+          <label htmlFor="region-select">Filter by Region:</label>
+          <select
+            id="region-select"
+            value={selectedRegion}
+            onChange={handleSelect}
+          >
+            <option value="All">All</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
       </div>
       {/* cards */}
       <div className="allCard">

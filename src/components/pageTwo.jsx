@@ -17,7 +17,7 @@ const CountryPage = () => {
   }
 
   return (
-    <div className="helf">
+    <div className="container">
       <div className="helf">
         <img src={data.flags.svg} alt="" />
       </div>
@@ -29,19 +29,17 @@ const CountryPage = () => {
         <p>tip level domain : {data.tld.join(", ")}</p>
         <p>
           currency:
-          {Object.values(data.currencies)
-            .map((currency) => currency.name)
-            .join(", ")}
+          {data.currencies?.IRR?.name}
         </p>
         <p>languages: {Object.values(data.languages).join(", ")}</p>
         <p>Capital: {data.capital.join(", ")}</p>
-        <h2> Border Countries:</h2>
-        <ul>
-          {data.borders.map((border) => (
-            <li key={border}>{border}</li>
-          ))}
-        </ul>
       </div>
+      {/* <h2> Border Countries:</h2>
+      <ul>
+        {data.borders.map((border) => (
+          <li key={border}>{border}</li>
+        ))}
+      </ul> */}
     </div>
   );
 };
