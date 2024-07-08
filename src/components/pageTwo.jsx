@@ -1,36 +1,57 @@
 import "./pagetwoo.css";
 import { useEffect } from "react";
+
 import {Link} from 'react-router-dom'
-import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCount } from '../redux/reducers';
+
 export default function PageTwo() {
-  const location = useLocation();
+  
+  // const [data, setData] = useState(null);
+  const cm = useSelector((state) => state.countryReducer.Selection);
+  const data = cm[0]
+console.log(data);
   useEffect(() => {
-    const { item } = location.state || {};
-    console.log(item);
+
   }, []);
+  const dispatch = useDispatch();
+  const handelClickc=()=>{
+    dispatch(clearCount());
+  }
+
   return (
     <>
-    <Link to={"../"}>back</Link>
+    <Link to={"../"}
+    onClick={handelClickc}
+     >back</Link>
       <div className="cantanerPage2">
         <img
           className="selectedCountrye"
-          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+          src={data.flags.svg}
           alt=""
         />
         <div className="cantanerLeft">
-          <h2 className="h2Style">iran</h2>
+          <h2 className="h2Style">{data.name.common}</h2>
           <div className="cantanerPLeftRight">
             <div className="cantanerP">
-              <p>Native Name:{}</p>
-              <p>Population:{} </p>
-              <p>Region:{}</p>
-              <p>Sub Region:{}</p>
-              <p>Capital:{}</p>
+              <p>Native Name: {data.name.nativeName?.fas?.official}</p>
+              <p>Population:{data.population.toLocaleString()} </p>
+              <p>Region:{data.region}</p>
+              <p>Sub Region:{data.subregion}</p>
+              <p>Capital:{data.capital.join(", ")}</p>
             </div>
             <div className="cantanereftp">
-              <p>Top Level Domain:{}</p>
-              <p>Currencies:{} </p>
-              <p>Languaes:{}</p>
+              <p>Top Level Domain:{data.tld.join(", ")}</p>
+              <p>Currencies:{Object.values(data.currencies)
+            .map((currency) => currency.name)
+            .join(", ")} </p>
+              <p>Languaes: {Object.values(data.languages).join(", ")}</p>
+              {/* <h2> Border Countries:</h2>
+        <ul>
+           {data.borders.map((border) => (
+            <li key={border}>{border}</li>
+          ))} 
+        </ul> */}
             </div>
           </div>
         </div>
@@ -38,28 +59,3 @@ export default function PageTwo() {
     </>
   );
 }
-/**  <div className="container">
-      <div className="helf">
-        <img src={data.flags.svg} alt="" />
-      </div>
-      <div className="half">
-        <p>Native Name : {data.name.nativeName?.fas?.official}</p>
-        <p>Population: {data.population.toLocaleString()}</p>
-        <p>Region: {data.region}</p>
-        <p> Sub Region: {data.subregion}</p>
-        <p>tip level domain : {data.tld.join(", ")}</p>
-        <p>
-          currency:
-          {data.currencies?.IRR?.name}
-        </p>
-        <p>languages: {Object.values(data.languages).join(", ")}</p>
-        <p>Capital: {data.capital.join(", ")}</p>
-      </div>
-      {/* <h2> Border Countries:</h2>
-      <ul>
-        {data.borders.map((border) => (
-          <li key={border}>{border}</li>
-        ))}
-      // </ul> }
-      // </div>   
-      // */

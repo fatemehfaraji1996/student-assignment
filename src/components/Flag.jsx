@@ -2,9 +2,11 @@
 // /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
-
+// ༼ つ ◕_◕ ༽つ
+import { addCount } from '../redux/reducers';
+import { useDispatch} from 'react-redux';
 export default function Mycomponent() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,14 +15,20 @@ export default function Mycomponent() {
   const [darkMode, setDarkMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(data);
-
+  // ༼ つ ◕_◕ ༽つ
+  const dispatch = useDispatch();
+  const handelClick=(item)=>{
+    dispatch(addCount(item));
+  }
+  // ༼ つ ◕_◕ ༽つ
+  
   const handleSelect = (event) => {
     const region = event.target.value;
     setSelectedRegion(region);
 
     const filteredData = data.filter((item) => {
       if (region === "All") {
-        return true; 
+        return true;
       } else {
         return item.region === region;
       }
@@ -59,9 +67,7 @@ export default function Mycomponent() {
     selectedRegion === "All" ? filteredCountries : filteredData;
 
   return (
-
     <>
-    
       <div className={darkMode ? "darkmode-body" : "body"}>
         {/* navbar */}
         <div className="navbar">
@@ -106,13 +112,14 @@ export default function Mycomponent() {
         <div className="allCard">
           {displayedCountries.map((item, index) => (
             // <Link to={`/country/${item.name.common}`}
-            <Link to={"/tt"}
-            state={item}
+            <Link
+              to={"/country"}
+              state={item}
               className={darkMode ? "darkmode_card" : "card"}
               key={index}
               style={{ position: "relative" }}
+              onClick={() => handelClick(item)}
             >
-              {console.log(item)}
               <img
                 src={item.flags.png}
                 alt={item.name.common}
@@ -121,6 +128,7 @@ export default function Mycomponent() {
               <div className={darkMode ? "cardbodyDark" : "cardbody"}>
                 <h5 className={darkMode ? "cardtitleDark" : "cardtitle"}>
                   {item.name.common}
+                  {/* {console.log(item.name.common)} */}
                 </h5>
                 <p className={darkMode ? "cardtextDark" : "cardtext"}>
                   Population: {item.population}
@@ -131,7 +139,6 @@ export default function Mycomponent() {
                 <p className={darkMode ? "cardtextDark" : "cardtext"}>
                   Capital: {item.capital}
                 </p>
-                
               </div>
             </Link>
           ))}
