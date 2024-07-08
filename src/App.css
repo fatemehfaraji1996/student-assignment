@@ -1,4 +1,4 @@
-.darkmode-body{
+.darkmode-body {
   background-color: hsl(209, 23%, 22%);
 }
 .allCard {
@@ -17,11 +17,11 @@
   border-radius: 4px;
   overflow: hidden;
   margin: 10px;
-  width:200px;
+  width: 200px;
   box-shadow: 2px 2px 2px 2px rgba(138, 179, 109, 0.2);
   box-shadow: 5px 5px 5px 5px rgb(84, 84, 84);
 }
-.darkmode_card{
+.darkmode_card {
   background-color: hsl(200, 15%, 8%);
   padding: 10px;
   border: 1px solid #141467;
@@ -42,9 +42,9 @@
 .cardbody {
   padding: 15px;
 }
-.cardbodyDark{
+.cardbodyDark {
   padding: 15px;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .cardtitle {
@@ -63,7 +63,7 @@
   font-size: 0.9em;
   margin-bottom: 5px;
 }
-.cardtextDark{
+.cardtextDark {
   color: #ffffff;
   font-size: 0.9em;
   margin-bottom: 5px;
@@ -76,7 +76,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.p-navbar-dark{
+.p-navbar-dark {
   color: #ddd;
 }
 .button {
@@ -106,4 +106,12 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 8px;
+}
+.seahum {
+  height: 60px;
+  width: auto;
+  padding: 20px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
