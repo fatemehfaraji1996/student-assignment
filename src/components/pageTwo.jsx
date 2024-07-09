@@ -7,10 +7,9 @@ import { clearCount } from '../redux/reducers';
 
 export default function PageTwo() {
   
-  // const [data, setData] = useState(null);
   const cm = useSelector((state) => state.countryReducer.Selection);
   const data = cm[0]
-console.log(data);
+
   useEffect(() => {
 
   }, []);

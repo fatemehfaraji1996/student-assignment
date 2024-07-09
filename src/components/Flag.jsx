@@ -5,23 +5,23 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 // ༼ つ ◕_◕ ༽つ
-import { addCount } from '../redux/reducers';
-import { useDispatch} from 'react-redux';
+import { addCount } from "../redux/reducers";
+import { useDispatch, useSelector } from "react-redux";
 export default function Mycomponent() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState("All");
-  const [darkMode, setDarkMode] = useState(false);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   // ༼ つ ◕_◕ ༽つ
   const dispatch = useDispatch();
-  const handelClick=(item)=>{
+  const handelClick = (item) => {
     dispatch(addCount(item));
-  }
+  };
   // ༼ つ ◕_◕ ༽つ
-  
+
   const handleSelect = (event) => {
     const region = event.target.value;
     setSelectedRegion(region);
@@ -37,9 +37,7 @@ export default function Mycomponent() {
     setFilteredData(filteredData);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  const darkMode = useSelector((state) => state.countryReducer.darkMode);
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
@@ -69,19 +67,6 @@ export default function Mycomponent() {
   return (
     <>
       <div className={darkMode ? "darkmode-body" : "body"}>
-        {/* navbar */}
-        <div className="navbar">
-          <p className={darkMode ? "p-navbar-dark" : "p-navbar"}>
-            where in the world?
-          </p>
-          <button
-            className={darkMode ? "button-dark" : "button"}
-            onClick={toggleDarkMode}
-          >
-            Dark Mode
-          </button>
-        </div>
-        {/* hamburger menu and search box */}
         <div className="seahum">
           {/* search box */}
           <div>
@@ -111,7 +96,6 @@ export default function Mycomponent() {
         {/* cards */}
         <div className="allCard">
           {displayedCountries.map((item, index) => (
-            // <Link to={`/country/${item.name.common}`}
             <Link
               to={"/country"}
               state={item}
@@ -128,7 +112,6 @@ export default function Mycomponent() {
               <div className={darkMode ? "cardbodyDark" : "cardbody"}>
                 <h5 className={darkMode ? "cardtitleDark" : "cardtitle"}>
                   {item.name.common}
-                  {/* {console.log(item.name.common)} */}
                 </h5>
                 <p className={darkMode ? "cardtextDark" : "cardtext"}>
                   Population: {item.population}

@@ -1,12 +1,10 @@
-import { useState} from "react";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../redux/reducers";
 export default function Nav() {
-    const [darkMode, setDarkMode] = useState(false);
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
-    return (
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.countryReducer.darkMode);
+
+  return (
     <>
       <div className="navbar">
         <p className={darkMode ? "p-navbar-dark" : "p-navbar"}>
@@ -14,7 +12,7 @@ export default function Nav() {
         </p>
         <button
           className={darkMode ? "button-dark" : "button"}
-          onClick={toggleDarkMode}
+          onClick={() => dispatch(toggleTheme())}
         >
           Dark Mode
         </button>
