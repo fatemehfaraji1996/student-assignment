@@ -6,7 +6,7 @@ export default function Nav() {
 
   return (
     <>
-      <div className="navbar">
+      <div className={darkMode ? "navbar-dark" : "navbar"}>
         <p className={darkMode ? "p-navbar-dark" : "p-navbar"}>
           where in the world?
         </p>

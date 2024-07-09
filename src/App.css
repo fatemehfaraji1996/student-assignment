@@ -76,8 +76,18 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.navbar-dark{
+  background: #666;
+  height: 60px;
+  width: auto;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .p-navbar-dark {
   color: #ddd;
+  background-color: #333;
 }
 .button {
   /* background-color: white; */
