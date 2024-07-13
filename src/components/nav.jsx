@@ -7,9 +7,9 @@ export default function Nav() {
   return (
     <>
       <div className={darkMode ? "navbar-dark" : "navbar"}>
-        <p className={darkMode ? "p-navbar-dark" : "p-navbar"}>
+        <span className={darkMode ? "p-navbarr-dark" : "p-navbarr"}>
           where in the world?
-        </p>
+        </span>
         <button
           className={darkMode ? "button-dark" : "button"}
           onClick={() => dispatch(toggleTheme())}

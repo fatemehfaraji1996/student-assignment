@@ -20,6 +20,7 @@
   width: 200px;
   box-shadow: 2px 2px 2px 2px rgba(138, 179, 109, 0.2);
   box-shadow: 5px 5px 5px 5px rgb(84, 84, 84);
+  transition: transform 0.2s;
 }
 .darkmode_card {
   background-color: hsl(200, 15%, 8%);
@@ -48,12 +49,10 @@
 }
 
 .cardtitle {
-  margin: 0;
   font-size: 1.2em;
   color: #333;
 }
 .cardtitleDark {
-  margin: 0;
   font-size: 1.2em;
   color: #ffffff;
 }
@@ -61,12 +60,10 @@
 .cardtext {
   color: #666;
   font-size: 0.9em;
-  margin-bottom: 5px;
 }
 .cardtextDark {
   color: #ffffff;
   font-size: 0.9em;
-  margin-bottom: 5px;
 }
 .navbar {
   height: 60px;
@@ -76,18 +73,25 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.navbar-dark{
+.navbar-dark {
   background: #666;
   height: 60px;
   width: auto;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 2px -2px rgba(255, 255, 255, 0.629);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.p-navbar-dark {
+.p-navbarr {
+  color: #333;
+  padding: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.p-navbarr-dark {
   color: #ddd;
-  background-color: #333;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .button {
   /* background-color: white; */
@@ -124,4 +128,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.card:hover {
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.1);
 }

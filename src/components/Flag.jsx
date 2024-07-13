@@ -78,13 +78,12 @@ export default function Mycomponent() {
           </div>
           {/* dropdown*/}
           <div className="dropdown">
-            <label htmlFor="region-select">Filter by Region:</label>
             <select
               id="region-select"
               value={selectedRegion}
               onChange={handleSelect}
             >
-              <option value="All">All</option>
+              <option value="All">Filter by Region</option>
               <option value="Africa">Africa</option>
               <option value="Americas">Americas</option>
               <option value="Asia">Asia</option>
